@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -33,6 +35,16 @@
 }
 
 @theme {
+  --color-cobalt: oklch(0.3572 0.1713 278.75);
+  --color-cobalt-light: oklch(0.4 0.1713 278.75);
+  --color-cobalt-dark: #09083d;
+  --color-dust: oklch(0.9397 0.0199 63.2);
+  --color-dust-light: oklch(0.9597 0.0199 63.2);
+  --color-dust-dark: oklch(0.9097 0.0199 63.2);
+
+  --font-sans: "Open Sans", sans-serif;
+  --font-display: "Playfair Display", serif;
+
   --color-foreground: var(--foreground);
   --color-background: var(--background);
   --color-unfocused-border-color: var(--unfocused-border-color);

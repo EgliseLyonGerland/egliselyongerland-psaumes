@@ -1,8 +1,4 @@
-import {
-  speculateFunctionName,
-  AwsRegion,
-  getRenderProgress,
-} from "@remotion/lambda/client";
+import { speculateFunctionName, AwsRegion, getRenderProgress } from "@remotion/lambda/client";
 import { DISK, RAM, REGION, TIMEOUT } from "../../../../../config.mjs";
 import { ProgressResponse, ProgressRequest } from "../../../../../types/schema";
 import { executeApi } from "../../../../helpers/api-response";

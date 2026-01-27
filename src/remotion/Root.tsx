@@ -1,38 +1,31 @@
-import { Composition } from "remotion";
-import { Main } from "./MyComp/Main";
-import {
-  COMP_NAME,
-  defaultMyCompProps,
-  DURATION_IN_FRAMES,
-  VIDEO_FPS,
-  VIDEO_HEIGHT,
-  VIDEO_WIDTH,
-} from "../../types/constants";
-import { NextLogo } from "./MyComp/NextLogo";
+import { Composition, staticFile } from "remotion";
+import { useAudioData } from "@remotion/media-utils";
+import songs from "./config/songs";
+import context from "./features/song/context";
+import { MainComposition } from "./features/main/MainComposition";
+import { VIDEO_FPS, VIDEO_HEIGHT, VIDEO_WIDTH } from "../../types/constants";
+
+const song = songs.psaume36;
 
 export const RemotionRoot: React.FC = () => {
+  const audioData = useAudioData(staticFile(`audio/${song.file}`));
+
+  if (!audioData) {
+    return null;
+  }
+
+  const durationInFrames = Math.ceil(audioData.durationInSeconds * 30) + 174;
+
   return (
-    <>
+    <context.Provider value={{ song, audioData }}>
       <Composition
-        id={COMP_NAME}
-        component={Main}
-        durationInFrames={DURATION_IN_FRAMES}
+        id="Main"
+        component={MainComposition}
+        durationInFrames={durationInFrames}
         fps={VIDEO_FPS}
         width={VIDEO_WIDTH}
         height={VIDEO_HEIGHT}
-        defaultProps={defaultMyCompProps}
       />
-      <Composition
-        id="NextLogo"
-        component={NextLogo}
-        durationInFrames={300}
-        fps={30}
-        width={140}
-        height={140}
-        defaultProps={{
-          outProgress: 0,
-        }}
-      />
-    </>
+    </context.Provider>
   );
 };
