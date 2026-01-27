@@ -58,7 +58,22 @@ export default function LyricsSequence() {
           );
         })}
       </AbsoluteFill>
-      <div className="absolute bottom-15 left-15 text-[5vh] leading-[1em] font-bold text-white opacity-60 mix-blend-overlay">
+
+      <div
+        className="absolute bottom-15 left-15 text-[5vh] leading-[1em] font-bold text-white opacity-60 mix-blend-overlay"
+        style={{
+          opacity: interpolate(
+            frame,
+            [
+              firstLyricStartAt + 50,
+              firstLyricStartAt + 60,
+              lyrics[lyrics.length - 1].startAt * fps,
+              lyrics[lyrics.length - 1].startAt * fps + 10,
+            ],
+            [0, 1, 1, 0],
+          ),
+        }}
+      >
         {title}
       </div>
     </>

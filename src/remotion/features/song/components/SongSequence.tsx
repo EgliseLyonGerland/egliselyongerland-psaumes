@@ -4,6 +4,7 @@ import { useContext } from "../context";
 import LyricsSequence from "./LyricsSequence";
 import IntroSequence from "./IntroSequence";
 import { staticFile } from "../../../utils/staticFile";
+import OutroSequence from "./OutroSequence";
 
 const wheelSpeeds = 0.05; // degrees per frame
 
@@ -38,6 +39,7 @@ export default function SongSequence(props: Omit<SequenceProps, "name" | "childr
       <Sequence from={30}>
         <IntroSequence />
         <LyricsSequence />
+        <OutroSequence />
         <Html5Audio name="Audio" src={staticFile(`audio/${song.file}`)} />
       </Sequence>
     </Sequence>

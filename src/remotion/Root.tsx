@@ -9,7 +9,7 @@ import {
   VIDEO_WIDTH,
 } from "../../types/constants";
 
-const song = songs.psaume36;
+const song = songs.psaume1;
 
 export const RemotionRoot: React.FC = () => {
   const durationInFrames = Math.ceil(song.duration * VIDEO_FPS) + JINGLE_DURATION_IN_FRAMES;

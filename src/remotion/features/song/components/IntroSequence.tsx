@@ -1,7 +1,12 @@
-import { AbsoluteFill, Sequence, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import {
+  AbsoluteFill,
+  Easing,
+  interpolate,
+  Sequence,
+  useCurrentFrame,
+  useVideoConfig,
+} from "remotion";
 import { useContext } from "../context";
-import { makeTransform, translateY } from "@remotion/animation-utils";
-import { clsx } from "clsx";
 
 const fadeInDuration = 15;
 const fadeOutDuration = 15;
@@ -9,65 +14,36 @@ const minDisplayDuration = 30;
 
 function TextAnimation({
   text,
-  direction,
   className,
   startAt,
   endAt,
 }: {
   text: string;
-  direction: "up" | "down";
   className?: string;
   startAt: number;
   endAt: number;
 }) {
   const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
-
-  const translate = (index: number) =>
-    spring({
-      frame: frame < endAt ? frame - startAt - index * 2 : frame - endAt - startAt - index * 2,
-      fps,
-      config: {
-        mass: 0.6,
-        damping: 22,
-        stiffness: 200,
-      },
-      durationInFrames: 0.67 * fps,
-    });
 
   return (
     <h1
-      className={clsx("flex gap-1", className)}
+      className={className}
       style={{
-        clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+        opacity:
+          frame < (endAt - startAt) / 2
+            ? interpolate(frame, [startAt + 50, startAt + 80], [0, 1], {
+                easing: Easing.out(Easing.quad),
+                extrapolateLeft: "clamp",
+                extrapolateRight: "clamp",
+              })
+            : interpolate(frame, [endAt - 20, endAt], [1, 0], {
+                easing: Easing.out(Easing.quad),
+                extrapolateLeft: "clamp",
+                extrapolateRight: "clamp",
+              }),
       }}
     >
-      {text.split("").map((char, charIndex) =>
-        char === " " ? (
-          <span key={charIndex} style={{ width: "0.5ch" }} />
-        ) : (
-          <span
-            key={charIndex}
-            className="flex gap-1"
-            style={{
-              transform: makeTransform([
-                translateY(
-                  frame < endAt
-                    ? direction === "up"
-                      ? 100 - translate(charIndex) * 100
-                      : -100 + translate(charIndex) * 100
-                    : direction === "up"
-                      ? translate(charIndex) * 100
-                      : translate(charIndex) * 100,
-                  "%",
-                ),
-              ]),
-            }}
-          >
-            {char}
-          </span>
-        ),
-      )}
+      {text}
     </h1>
   );
 }
@@ -87,8 +63,8 @@ export default function IntroSequence() {
 
   const totalDuration = fadeInDuration + displayDuration + fadeOutDuration;
 
-  const startAt = 50;
-  const endAt = totalDuration - startAt - 50;
+  const startAt = 30;
+  const endAt = totalDuration - startAt - 20;
 
   if (frame > endAt) {
     return null;
@@ -96,19 +72,17 @@ export default function IntroSequence() {
 
   return (
     <Sequence name="Intro">
-      <AbsoluteFill className="flex flex-col items-center justify-center">
+      <AbsoluteFill className="flex flex-col items-center justify-center gap-10">
         <TextAnimation
           text={song.title}
-          direction="up"
           startAt={startAt}
           endAt={endAt}
-          className="font-display text-8xl/loose font-bold text-dust shadow-sm"
+          className="font-display text-8xl font-bold text-dust shadow-sm"
         />
         <TextAnimation
           text={song.author}
-          direction="down"
-          startAt={startAt}
-          endAt={endAt}
+          startAt={startAt + 5}
+          endAt={endAt - 5}
           className="text-5xl text-dust/60"
         />
       </AbsoluteFill>
