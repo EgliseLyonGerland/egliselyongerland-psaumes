@@ -2,7 +2,7 @@ import { Song } from "../../features/song/types";
 import { getStartTime } from "../songs";
 
 const tempo = 63.1;
-const offset = 15.55;
+const offset = 15;
 
 export default {
   title: "Psaume 121",
