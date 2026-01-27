@@ -85,72 +85,69 @@ export default {
       startAt: getStartTime(tempo, 126, offset),
       endAt: getStartTime(tempo, 136, offset),
     },
-
-    // ----
-
     {
-      text: "Ut pariatur minim ad labore non irure",
+      text: "Si les méchants fleurissent,",
       startAt: getStartTime(tempo, 144, offset),
     },
     {
-      text: "Quis non exercitation cillum proident",
+      text: "Comme l'ivraie des champs,",
       startAt: getStartTime(tempo, 152, offset),
     },
     {
-      text: "Et et excepteur anim occaecat",
+      text: "Et si des arrogants",
       startAt: getStartTime(tempo, 160, offset),
     },
     {
-      text: "Dolor esse eiusmod officia eu sint",
+      text: "Les projets réussissent,",
       startAt: getStartTime(tempo, 166, offset),
     },
     {
-      text: "Velit nisi sunt enim consequat sit",
+      text: "C'est pour qu'ils disparaissent",
       startAt: getStartTime(tempo, 176, offset),
     },
     {
-      text: "Amet aute irure aute aliqua",
+      text: "Par la mort emportés",
       startAt: getStartTime(tempo, 184, offset),
     },
     {
-      text: "Et magna dolore laborum ut et excepteur",
+      text: "Et que soient dévoilés",
       startAt: getStartTime(tempo, 192, offset),
     },
     {
-      text: "Aute aute enim ut ullamco",
+      text: "Les plans de ta sagesse.",
       startAt: getStartTime(tempo, 198, offset),
       endAt: getStartTime(tempo, 208, offset),
     },
     {
-      text: "Dolor reprehenderit fugiat ipsum",
+      text: "Tu oins d'une huile fraîche",
       startAt: getStartTime(tempo, 216, offset),
     },
     {
-      text: "Velit tempor elit sit officia aliquip.",
+      text: "Le front de ton enfant;",
       startAt: getStartTime(tempo, 224, offset),
     },
     {
-      text: "Aute est laboris officia sit fugiat magna.",
+      text: "On le voit rayonnant,",
       startAt: getStartTime(tempo, 232, offset),
     },
     {
-      text: "Officia nostrud do culpa est.",
+      text: "Vigoureux comme un cèdre.",
       startAt: getStartTime(tempo, 238, offset),
     },
     {
-      text: "Sa gloire sit tempor aliquip deserunt.",
+      text: "Sa gloire et sa richesse",
       startAt: getStartTime(tempo, 248, offset),
     },
     {
-      text: "Nostrud ea sit mollit laborum qui quis cillum.",
+      text: "Sont d'orner ta maison;",
       startAt: getStartTime(tempo, 256, offset),
     },
     {
-      text: "Sit labore labore aute amet tempor culpa.",
+      text: "Tes fruits chaque saison",
       startAt: getStartTime(tempo, 264, offset),
     },
     {
-      text: "Et enim ad exercitation nostrud qui dolor.",
+      text: "Combleront sa vieillesse.",
       startAt: getStartTime(tempo, 270, offset),
       endAt: getStartTime(tempo, 280, offset),
     },
