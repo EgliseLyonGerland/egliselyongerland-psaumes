@@ -1,6 +1,5 @@
 import { AbsoluteFill, Html5Audio, Img, Sequence, SequenceProps, useCurrentFrame } from "remotion";
 
-import logo from "../images/logo.png";
 import { useContext } from "../context";
 import LyricsSequence from "./LyricsSequence";
 import IntroSequence from "./IntroSequence";
@@ -14,6 +13,8 @@ export default function SongSequence(props: Omit<SequenceProps, "name" | "childr
 
   const wheelRotateValue = (frame * wheelSpeeds) % 360;
 
+  console.log(staticFile("images/logo.png"));
+
   return (
     <Sequence name="Song" {...props}>
       <AbsoluteFill className="bg-linear-to-tr from-cobalt to-cobalt-dark">
@@ -21,7 +22,7 @@ export default function SongSequence(props: Omit<SequenceProps, "name" | "childr
         <div className="absolute right-16 bottom-16 size-96 scale-[175%] rounded-full bg-purple-400 opacity-20 mix-blend-hard-light blur-[100px]" />
 
         <Img
-          src={logo.src}
+          src={staticFile("images/logo.png")}
           className="absolute -top-12 -left-[30rem] scale-110 opacity-30 mix-blend-color-dodge"
           style={{
             transform: `rotate(${wheelRotateValue}deg)`,

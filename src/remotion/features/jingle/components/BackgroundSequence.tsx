@@ -1,7 +1,6 @@
 import { AbsoluteFill, Easing, Img, interpolate, Sequence, useCurrentFrame } from "remotion";
 
-import bg1 from "../images/bg1.png";
-import bg2 from "../images/bg2.png";
+import { staticFile } from "../../../utils/staticFile";
 
 export default function BackgroundSequence() {
   const frame = useCurrentFrame();
@@ -15,12 +14,12 @@ export default function BackgroundSequence() {
   return (
     <Sequence name="Background">
       <AbsoluteFill className="bg-cobalt-dark">
-        <Img src={bg1.src} />
+        <Img src={staticFile("images/bg1.png")} />
       </AbsoluteFill>
 
       <AbsoluteFill className="flex items-center justify-center">
         <Img
-          src={bg2.src}
+          src={staticFile("images/bg2.png")}
           style={{
             clipPath: `circle(${circleScaleValue}%)`,
           }}
