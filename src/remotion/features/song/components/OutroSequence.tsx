@@ -24,7 +24,7 @@ export default function OutroSequence() {
         className="absolute top-48 left-48 flex justify-center text-dust-light max-w-4xl flex-col gap-10 opacity-80 tracking-wide"
         style={{ opacity }}
       >
-        <div className="text-8xl font-bold">{song.title}</div>
+        <div className="text-6xl font-bold">{song.title}</div>
         <div className="text-4xl font-serif leading-12 opacity-70">
           Inteprété par les membres de l'église réformée-évangélique de Lyon-Gerland
         </div>
