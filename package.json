@@ -29,10 +29,12 @@
     "@remotion/shapes": "4.0.410",
     "@remotion/tailwind-v4": "4.0.410",
     "clsx": "2.1.1",
+    "lint-staged": "^16.2.7",
     "next": "16.0.10",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "remotion": "4.0.410",
+    "simple-git-hooks": "^2.13.1",
     "tailwind-merge": "3.0.1",
     "zod": "3.22.3"
   },
@@ -58,5 +60,12 @@
     "tailwindcss": "4.0.3",
     "typescript": "5.9.3",
     "typescript-eslint": "8.46.0"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,mjs,cjs}": "pnpm run lint",
+    "*": "oxfmt --no-error-on-unmatched-pattern"
   }
 }
