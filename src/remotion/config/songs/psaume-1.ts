@@ -8,6 +8,7 @@ export default {
   title: "Psaume 1",
   author: "A. Sarran",
   file: "psaume-1.wav",
+  duration: 167.92370833333334,
   lyrics: [
     {
       text: "Heureux celui qui ne marche jamais",

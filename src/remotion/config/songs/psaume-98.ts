@@ -8,6 +8,7 @@ export default {
   title: "Psaume 98",
   author: "A. Sarran",
   file: "psaume-98.wav",
+  duration: 163.46547916666665,
   lyrics: [
     {
       text: "Entonnons un nouveau cantique",

@@ -8,6 +8,7 @@ export default {
   title: "Psaume 92",
   author: "A. Sarran",
   file: "psaume-92.mp3",
+  duration: 159.05958333333334,
   lyrics: [
     {
       text: "Oh ! Que c'est chose belle,",

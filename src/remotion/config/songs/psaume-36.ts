@@ -8,6 +8,7 @@ export default {
   title: "Psaume 36",
   author: "A. Sarran",
   file: "psaume-36.wav",
+  duration: 193.18702083333332,
   lyrics: [
     {
       text: "Ô Seigneur, ta fidélité",

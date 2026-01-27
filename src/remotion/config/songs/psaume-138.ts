@@ -8,6 +8,7 @@ export default {
   title: "Psaume 138",
   author: "A. Sarran",
   file: "psaume-138.wav",
+  duration: 176.84016666666668,
   lyrics: [
     {
       text: "Que tout mon cœur soit dans mon chant,",

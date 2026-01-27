@@ -8,6 +8,7 @@ export default {
   title: "Psaume 84",
   author: "A. Sarran",
   file: "psaume-84.wav",
+  duration: 173.86802083333333,
   lyrics: [
     {
       text: "Dans ta maison je suis heureux,",

@@ -1,10 +1,8 @@
 import React from "react";
 import { Song } from "./types";
-import { MediaUtilsAudioData } from "@remotion/media-utils";
 
 interface Context {
   song: Song;
-  audioData: MediaUtilsAudioData;
 }
 
 const context = React.createContext<Context | null>(null);

@@ -1,31 +1,32 @@
 "use client";
 
-import { Player } from "@remotion/player";
+import { Player, PlayerRef } from "@remotion/player";
 import type { NextPage } from "next";
-import { VIDEO_FPS, VIDEO_HEIGHT, VIDEO_WIDTH } from "../../types/constants";
+import {
+  JINGLE_DURATION_IN_FRAMES,
+  VIDEO_FPS,
+  VIDEO_HEIGHT,
+  VIDEO_WIDTH,
+} from "../../types/constants";
 import { MainComposition } from "../remotion/features/main/MainComposition";
 import Context from "../remotion/features/song/context";
 import songs from "../remotion/config/songs";
-import { useAudioData } from "@remotion/media-utils";
-import { staticFile } from "../remotion/utils/staticFile";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { clsx } from "clsx";
 
 const Home: NextPage = () => {
-  const [song, setSong] = useState(songs.psaume36);
-  const audioData = useAudioData(staticFile(`audio/${song.file}`));
+  const playerRef = useRef<PlayerRef>(null);
+  const [currentSong, setCurrentSong] = useState<keyof typeof songs>("psaume1");
+  const song = songs[currentSong];
 
-  if (!audioData) {
-    return null;
-  }
-
-  const durationInFrames = Math.ceil(audioData.durationInSeconds * 30) + 174;
+  const durationInFrames = Math.ceil(song.duration * VIDEO_FPS) + JINGLE_DURATION_IN_FRAMES;
 
   return (
     <div className="max-w-screen-md m-auto mb-5 p-4">
       <div className="overflow-hidden rounded-geist shadow-[0_0_200px_rgba(0,0,0,0.15)]">
-        <Context.Provider value={{ song, audioData }}>
+        <Context.Provider value={{ song }}>
           <Player
+            ref={playerRef}
             component={MainComposition}
             durationInFrames={durationInFrames}
             fps={VIDEO_FPS}
@@ -41,14 +42,26 @@ const Home: NextPage = () => {
         </Context.Provider>
       </div>
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-4">
-        {Object.values(songs).map((item) => (
+        {Object.entries(songs).map(([key, item]) => (
           <button
             key={item.file}
             className={clsx(
-              "px-3 h-8 outline outline-cobalt-light text-white rounded-geist hover:bg-cobalt-dark transition-colors",
-              item === song && "bg-cobalt-light",
+              "px-3 h-8 outline outline-cobalt-light text-white rounded-geist  transition-colors",
+              key === currentSong ? "bg-cobalt-light" : "hover:bg-cobalt-dark",
             )}
-            onClick={() => setSong(item)}
+            onClick={() => {
+              const currentFrame = playerRef.current?.getCurrentFrame() ?? 0;
+              const progress = currentFrame / durationInFrames;
+
+              const itemDurationInFrames =
+                Math.ceil(item.duration * VIDEO_FPS) + JINGLE_DURATION_IN_FRAMES;
+
+              if (currentFrame > itemDurationInFrames) {
+                playerRef.current?.seekTo(itemDurationInFrames * progress);
+              }
+
+              setCurrentSong(key as keyof typeof songs);
+            }}
           >
             {item.title}
           </button>

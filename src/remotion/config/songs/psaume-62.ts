@@ -8,6 +8,7 @@ export default {
   title: "Psaume 62",
   author: "A. Sarran",
   file: "psaume-62.wav",
+  duration: 206.56170833333334,
   lyrics: [
     {
       text: "En toi, mon Dieu, toi seulement,",
@@ -129,6 +130,7 @@ export default {
     {
       text: "Son repos et sa récompense.",
       startAt: getStartTime(tempo, 458, offset),
+      endAt: getStartTime(tempo, 482, offset),
     },
   ],
 } satisfies Song;

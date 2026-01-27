@@ -8,6 +8,7 @@ export default {
   title: "Psaume 121",
   author: "A. Sarran",
   file: "psaume-121.wav",
+  duration: 266.0047916666667,
   lyrics: [
     {
       text: "Vers les montagnes, mon regard",

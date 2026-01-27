@@ -8,6 +8,7 @@ export default {
   title: "Psaume 19",
   author: "A. Sarran",
   file: "psaume-19.wav",
+  duration: 164.9515625,
   lyrics: [
     {
       text: "Les cieux en chaque lieu",
