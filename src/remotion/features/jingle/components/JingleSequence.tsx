@@ -1,9 +1,8 @@
-import { AbsoluteFill, Easing, Html5Audio, interpolate, Sequence, useCurrentFrame } from "remotion";
+import { AbsoluteFill, Easing, interpolate, Sequence, useCurrentFrame } from "remotion";
 import BackgroundSequence from "./BackgroundSequence";
 import { LogoSequence } from "./LogoSequence";
 import { TitleSequence } from "./TitleSequence";
 import { durationInFrames, endAt } from "../config";
-import { staticFile } from "../../../utils/staticFile";
 
 const curtainsStartAt = endAt + 5;
 
@@ -28,14 +27,14 @@ export default function JingleSequence() {
         <TitleSequence />
       </AbsoluteFill>
 
-      <Html5Audio
+      {/* <Html5Audio
         src={staticFile("audio/elegant-guitar-logo-335303.mp3")}
         volume={(f) =>
           interpolate(f, [durationInFrames - 100, durationInFrames], [1, 0], {
             extrapolateLeft: "clamp",
           })
         }
-      />
+      /> */}
     </Sequence>
   );
 }

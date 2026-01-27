@@ -2,12 +2,7 @@
 
 import { Player, PlayerRef } from "@remotion/player";
 import type { NextPage } from "next";
-import {
-  JINGLE_DURATION_IN_FRAMES,
-  VIDEO_FPS,
-  VIDEO_HEIGHT,
-  VIDEO_WIDTH,
-} from "../../types/constants";
+import { VIDEO_FPS, VIDEO_HEIGHT, VIDEO_WIDTH } from "../../types/constants";
 import { MainComposition } from "../remotion/features/main/MainComposition";
 import Context from "../remotion/features/song/context";
 import songs from "../remotion/config/songs";
@@ -19,7 +14,7 @@ const Home: NextPage = () => {
   const [currentSong, setCurrentSong] = useState<keyof typeof songs>("psaume1");
   const song = songs[currentSong];
 
-  const durationInFrames = Math.ceil(song.duration * VIDEO_FPS) + JINGLE_DURATION_IN_FRAMES;
+  const durationInFrames = Math.ceil(song.duration * VIDEO_FPS);
 
   return (
     <div className="max-w-screen-md m-auto mb-5 p-4">
@@ -54,8 +49,7 @@ const Home: NextPage = () => {
               const currentFrame = playerRef.current?.getCurrentFrame() ?? 0;
               const progress = currentFrame / durationInFrames;
 
-              const itemDurationInFrames =
-                Math.ceil(item.duration * VIDEO_FPS) + JINGLE_DURATION_IN_FRAMES;
+              const itemDurationInFrames = Math.ceil(item.duration * VIDEO_FPS);
 
               if (currentFrame > itemDurationInFrames) {
                 playerRef.current?.seekTo(itemDurationInFrames * progress);

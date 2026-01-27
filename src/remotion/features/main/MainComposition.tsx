@@ -1,6 +1,5 @@
 import SongSequence from "../song/components/SongSequence";
 import JingleSequence from "../jingle/components/JingleSequence";
-import { JINGLE_DURATION_IN_FRAMES } from "../../../../types/constants";
 import { interpolate, useCurrentFrame, useVideoConfig } from "remotion";
 
 export const MainComposition = () => {
@@ -14,7 +13,7 @@ export const MainComposition = () => {
 
   return (
     <div style={{ opacity }}>
-      <SongSequence from={JINGLE_DURATION_IN_FRAMES} />
+      <SongSequence />
       <JingleSequence />
     </div>
   );

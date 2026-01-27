@@ -8,9 +8,7 @@ import {
 } from "remotion";
 import { useContext } from "../context";
 
-const fadeInDuration = 15;
-const fadeOutDuration = 15;
-const minDisplayDuration = 30;
+const fadeDuration = 30;
 
 function TextAnimation({
   text,
@@ -30,13 +28,13 @@ function TextAnimation({
       className={className}
       style={{
         opacity:
-          frame < (endAt - startAt) / 2
-            ? interpolate(frame, [startAt + 50, startAt + 80], [0, 1], {
+          frame <= endAt - fadeDuration
+            ? interpolate(frame, [startAt, startAt + fadeDuration], [0, 1], {
                 easing: Easing.out(Easing.quad),
                 extrapolateLeft: "clamp",
                 extrapolateRight: "clamp",
               })
-            : interpolate(frame, [endAt - 20, endAt], [1, 0], {
+            : interpolate(frame, [endAt - fadeDuration, endAt], [1, 0], {
                 easing: Easing.out(Easing.quad),
                 extrapolateLeft: "clamp",
                 extrapolateRight: "clamp",
@@ -50,25 +48,13 @@ function TextAnimation({
 
 export default function IntroSequence() {
   const { song } = useContext();
-  const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  // Calculate display duration based on first lyric's startAt
   const firstLyric = song.lyrics[0];
-  const firstLyricStartFrame = firstLyric ? firstLyric.startAt * fps : minDisplayDuration;
-  const displayDuration = Math.max(
-    minDisplayDuration,
-    firstLyricStartFrame - fadeInDuration - fadeOutDuration,
-  );
+  const firstLyricStartFrame = firstLyric.startAt * fps;
 
-  const totalDuration = fadeInDuration + displayDuration + fadeOutDuration;
-
-  const startAt = 30;
-  const endAt = totalDuration - startAt - 20;
-
-  if (frame > endAt) {
-    return null;
-  }
+  const startAt = 190;
+  const endAt = firstLyricStartFrame - 10;
 
   return (
     <Sequence name="Intro">

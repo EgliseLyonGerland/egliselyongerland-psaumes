@@ -14,8 +14,6 @@ export default function SongSequence(props: Omit<SequenceProps, "name" | "childr
 
   const wheelRotateValue = (frame * wheelSpeeds) % 360;
 
-  console.log(staticFile("images/logo.png"));
-
   return (
     <Sequence name="Song" {...props}>
       <AbsoluteFill className="bg-linear-to-tr from-cobalt to-cobalt-dark">
@@ -36,7 +34,7 @@ export default function SongSequence(props: Omit<SequenceProps, "name" | "childr
         style={{ backgroundImage: `url(${staticFile("images/grain.png")})` }}
       />
 
-      <Sequence from={30}>
+      <Sequence>
         <IntroSequence />
         <LyricsSequence />
         <OutroSequence />
