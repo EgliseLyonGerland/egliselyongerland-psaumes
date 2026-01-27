@@ -6,9 +6,18 @@ const offset = 15.5;
 
 export default {
   title: "Psaume 92",
-  author: "A. Sarran",
   file: "psaume-92.mp3",
   duration: 159.05958333333334,
+  metadata: {
+    writer: "R. Chapal, T. de Bèze, C. Goudimel",
+    composer: "A. Sarran",
+    performers: [
+      "S. Sarran (chant)",
+      "M. Blum (violon)",
+      "A. Sarran (basse)",
+      "D. Legal (guitare)",
+    ],
+  },
   lyrics: [
     {
       text: "Oh ! Que c'est chose belle,",

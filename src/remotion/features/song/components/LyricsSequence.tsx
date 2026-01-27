@@ -30,7 +30,6 @@ export default function LyricsSequence() {
                 transform: scale(
                   frame <= endAt
                     ? interpolate(frame, [startAt, endAt], [0.9, 1.05], {
-                        // easing: Easing.out(Easing.quad),
                         easing: Easing.bezier(0, 0.63, 0.86, 0.85),
                         extrapolateLeft: "clamp",
                         extrapolateRight: "clamp",

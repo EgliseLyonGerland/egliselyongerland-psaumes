@@ -6,9 +6,18 @@ const offset = 13.9;
 
 export default {
   title: "Psaume 84",
-  author: "A. Sarran",
   file: "psaume-84.wav",
   duration: 173.86802083333333,
+  metadata: {
+    writer: "R. Chapal, T. de Bèze, C. Goudimel",
+    composer: "A. Sarran",
+    performers: [
+      "S. Sarran (chant)",
+      "M. Blum (violon)",
+      "A. Sarran (basse)",
+      "D. Legal (guitare)",
+    ],
+  },
   lyrics: [
     {
       text: "Dans ta maison je suis heureux,",

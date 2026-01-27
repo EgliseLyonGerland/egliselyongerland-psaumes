@@ -80,7 +80,7 @@ export default function IntroSequence() {
           className="font-display text-8xl font-bold text-dust shadow-sm"
         />
         <TextAnimation
-          text={song.author}
+          text={Array.from(new Set([song.metadata.composer, song.metadata.writer])).join(", ")}
           startAt={startAt + 5}
           endAt={endAt - 5}
           className="text-5xl text-dust/60"

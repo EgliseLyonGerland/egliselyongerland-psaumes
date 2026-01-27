@@ -6,9 +6,18 @@ const offset = 27;
 
 export default {
   title: "Psaume 36",
-  author: "A. Sarran",
   file: "psaume-36.wav",
   duration: 193.18702083333332,
+  metadata: {
+    writer: "R. Chapal, C. Marot, C. Goudimel",
+    composer: "A. Sarran",
+    performers: [
+      "S. Sarran (chant)",
+      "M. Blum (violon)",
+      "A. Sarran (basse)",
+      "D. Legal (guitare)",
+    ],
+  },
   lyrics: [
     {
       text: "Ô Seigneur, ta fidélité",

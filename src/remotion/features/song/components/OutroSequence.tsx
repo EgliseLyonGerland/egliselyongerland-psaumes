@@ -1,6 +1,7 @@
 import { interpolate, Sequence, useCurrentFrame } from "remotion";
 import { useContext } from "../context";
 import { VIDEO_FPS } from "../../../../../types/constants";
+import { Fragment } from "react";
 
 export default function OutroSequence() {
   const { song } = useContext();
@@ -9,7 +10,6 @@ export default function OutroSequence() {
   const lastLyric = song.lyrics[song.lyrics.length - 1];
   const lastLyricEndAt = lastLyric.endAt ?? song.duration - 10;
   const delta = Math.min(song.duration - lastLyricEndAt, 15);
-  // const startAt = lastLyricEndAt + 1;
 
   const startAt = (song.duration - delta) * VIDEO_FPS;
 
@@ -28,12 +28,28 @@ export default function OutroSequence() {
         <div className="text-4xl font-serif leading-12 opacity-70">
           Inteprété par les membres de l'église réformée-évangélique de Lyon-Gerland
         </div>
+        {song.metadata.writer === song.metadata.composer ? (
+          <div className="text-4xl font-serif leading-12 opacity-70">
+            <b>Musique et paroles :</b> {song.metadata.writer}
+          </div>
+        ) : (
+          <>
+            <div className="text-4xl font-serif leading-12 opacity-70">
+              <b>Musique :</b> {song.metadata.composer}
+            </div>
+            <div className="text-4xl font-serif leading-12 opacity-70">
+              <b>Paroles :</b> {song.metadata.writer}
+            </div>
+          </>
+        )}
         <div className="text-4xl font-serif leading-12 opacity-70">
-          <b>Musique et paroles :</b> Alexandre Sarran
-        </div>
-        <div className="text-4xl font-serif leading-12 opacity-70">
-          <b>Interprètes :</b> Suzanne Sarran (chant) / Alexandre Sarran (guitare) / Mailys Blum
-          (violon)
+          <b>Interprètes :</b>{" "}
+          {song.metadata.performers.map((p, index) => (
+            <Fragment key={p}>
+              {index > 0 && ", "}
+              <span className="inline-flex whitespace-nowrap">{p}</span>
+            </Fragment>
+          ))}
         </div>
       </div>
     </Sequence>

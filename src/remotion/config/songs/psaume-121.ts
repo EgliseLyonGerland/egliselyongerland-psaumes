@@ -6,9 +6,18 @@ const offset = 15.55;
 
 export default {
   title: "Psaume 121",
-  author: "A. Sarran",
   file: "psaume-121.wav",
   duration: 266.0047916666667,
+  metadata: {
+    writer: "A. Sarran",
+    composer: "A. Sarran",
+    performers: [
+      "S. Sarran (chant)",
+      "M. Blum (violon)",
+      "A. Sarran (basse)",
+      "D. Legal (guitare)",
+    ],
+  },
   lyrics: [
     {
       text: "Vers les montagnes, mon regard",

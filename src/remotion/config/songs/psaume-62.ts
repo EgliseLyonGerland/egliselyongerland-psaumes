@@ -6,9 +6,18 @@ const offset = 32.5;
 
 export default {
   title: "Psaume 62",
-  author: "A. Sarran",
   file: "psaume-62.wav",
   duration: 206.56170833333334,
+  metadata: {
+    writer: "R. Chapal, T. de Bèze, C. Goudimel",
+    composer: "A. Sarran",
+    performers: [
+      "S. Sarran (chant)",
+      "M. Blum (violon)",
+      "A. Sarran (basse)",
+      "D. Legal (guitare)",
+    ],
+  },
   lyrics: [
     {
       text: "En toi, mon Dieu, toi seulement,",

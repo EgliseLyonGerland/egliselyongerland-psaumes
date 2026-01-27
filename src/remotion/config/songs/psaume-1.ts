@@ -6,9 +6,18 @@ const offset = 12.3;
 
 export default {
   title: "Psaume 1",
-  author: "A. Sarran",
   file: "psaume-1.wav",
   duration: 167.92370833333334,
+  metadata: {
+    writer: "A. Sarran",
+    composer: "A. Sarran",
+    performers: [
+      "S. Sarran (chant)",
+      "M. Blum (violon)",
+      "A. Sarran (basse)",
+      "D. Legal (guitare)",
+    ],
+  },
   lyrics: [
     {
       text: "Heureux celui qui ne marche jamais",

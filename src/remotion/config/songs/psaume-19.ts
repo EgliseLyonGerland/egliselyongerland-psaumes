@@ -6,9 +6,18 @@ const offset = 10.5;
 
 export default {
   title: "Psaume 19",
-  author: "A. Sarran",
   file: "psaume-19.wav",
   duration: 164.9515625,
+  metadata: {
+    writer: "C. Marot, M. F. Gonin",
+    composer: "A. Sarran",
+    performers: [
+      "S. Sarran (chant)",
+      "M. Blum (violon)",
+      "A. Sarran (basse)",
+      "D. Legal (guitare)",
+    ],
+  },
   lyrics: [
     {
       text: "Les cieux en chaque lieu",
