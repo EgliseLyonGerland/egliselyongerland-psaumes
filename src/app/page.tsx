@@ -38,6 +38,7 @@ const Home: NextPage = () => {
               width: "100%",
             }}
             controls
+            moveToBeginningWhenEnded={false}
           />
         </Context.Provider>
       </div>
