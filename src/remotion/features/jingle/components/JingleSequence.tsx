@@ -1,16 +1,9 @@
-import {
-  AbsoluteFill,
-  Easing,
-  Html5Audio,
-  interpolate,
-  Sequence,
-  staticFile,
-  useCurrentFrame,
-} from "remotion";
+import { AbsoluteFill, Easing, Html5Audio, interpolate, Sequence, useCurrentFrame } from "remotion";
 import BackgroundSequence from "./BackgroundSequence";
 import { LogoSequence } from "./LogoSequence";
 import { TitleSequence } from "./TitleSequence";
 import { durationInFrames, endAt } from "../config";
+import { staticFile } from "../../../utils/staticFile";
 
 const curtainsStartAt = endAt + 5;
 

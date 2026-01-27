@@ -7,7 +7,7 @@ import { MainComposition } from "../remotion/features/main/MainComposition";
 import Context from "../remotion/features/song/context";
 import songs from "../remotion/config/songs";
 import { useAudioData } from "@remotion/media-utils";
-import { staticFile } from "remotion";
+import { staticFile } from "../remotion/utils/staticFile";
 
 const song = songs.psaume36;
 

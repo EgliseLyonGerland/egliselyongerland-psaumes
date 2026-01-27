@@ -1,17 +1,10 @@
-import {
-  AbsoluteFill,
-  Html5Audio,
-  Img,
-  Sequence,
-  SequenceProps,
-  staticFile,
-  useCurrentFrame,
-} from "remotion";
+import { AbsoluteFill, Html5Audio, Img, Sequence, SequenceProps, useCurrentFrame } from "remotion";
 
 import logo from "../images/logo.png";
 import { useContext } from "../context";
 import LyricsSequence from "./LyricsSequence";
 import IntroSequence from "./IntroSequence";
+import { staticFile } from "../../../utils/staticFile";
 
 const wheelSpeeds = 0.05; // degrees per frame
 

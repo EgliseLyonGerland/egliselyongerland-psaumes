@@ -1,9 +1,10 @@
-import { Composition, staticFile } from "remotion";
+import { Composition } from "remotion";
 import { useAudioData } from "@remotion/media-utils";
 import songs from "./config/songs";
 import context from "./features/song/context";
 import { MainComposition } from "./features/main/MainComposition";
 import { VIDEO_FPS, VIDEO_HEIGHT, VIDEO_WIDTH } from "../../types/constants";
+import { staticFile } from "./utils/staticFile";
 
 const song = songs.psaume36;
 
