@@ -14,8 +14,10 @@ export default {
     performers: [
       "S. Sarran (chant)",
       "M. Blum (violon)",
+      "E. Jallat (alto)",
       "A. Sarran (basse)",
       "D. Legal (guitare)",
+      "A. Fréchet (cajón)",
     ],
   },
   lyrics: [

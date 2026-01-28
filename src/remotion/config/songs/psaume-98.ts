@@ -9,13 +9,15 @@ export default {
   file: "psaume-98.wav",
   duration: 163.46547916666665,
   metadata: {
-    writer: "R. Chapal, T. de Bèze, C. Goudimel",
+    writer: "R. Chapal",
     composer: "A. Sarran",
     performers: [
       "S. Sarran (chant)",
       "M. Blum (violon)",
+      "E. Jallat (alto)",
       "A. Sarran (basse)",
       "D. Legal (guitare)",
+      "A. Fréchet (cajón)",
     ],
   },
   lyrics: [

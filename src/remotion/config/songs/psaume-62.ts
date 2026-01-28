@@ -9,13 +9,15 @@ export default {
   file: "psaume-62.wav",
   duration: 206.56170833333334,
   metadata: {
-    writer: "R. Chapal, T. de Bèze, C. Goudimel",
+    writer: "R. Chapal",
     composer: "A. Sarran",
     performers: [
       "S. Sarran (chant)",
       "M. Blum (violon)",
+      "E. Jallat (alto)",
       "A. Sarran (basse)",
       "D. Legal (guitare)",
+      "A. Fréchet (cajón)",
     ],
   },
   lyrics: [

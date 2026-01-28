@@ -65,7 +65,7 @@
     "pre-commit": "npx lint-staged"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,mjs,cjs}": "pnpm run lint",
+    "*.{js,jsx,ts,tsx,mjs,cjs}": "eslint",
     "*": "oxfmt --no-error-on-unmatched-pattern"
   }
 }

@@ -16,6 +16,7 @@ export default {
       "M. Blum (violon)",
       "A. Sarran (basse)",
       "D. Legal (guitare)",
+      "A. Fréchet (cajón)",
     ],
   },
   lyrics: [

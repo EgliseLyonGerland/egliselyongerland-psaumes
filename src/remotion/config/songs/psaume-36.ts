@@ -9,13 +9,14 @@ export default {
   file: "psaume-36.wav",
   duration: 193.18702083333332,
   metadata: {
-    writer: "R. Chapal, C. Marot, C. Goudimel",
+    writer: "R. Chapal",
     composer: "A. Sarran",
     performers: [
       "S. Sarran (chant)",
       "M. Blum (violon)",
       "A. Sarran (basse)",
       "D. Legal (guitare)",
+      "A. Fréchet (cajón)",
     ],
   },
   lyrics: [
