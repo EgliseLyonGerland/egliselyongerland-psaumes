@@ -48,12 +48,9 @@ const Home: NextPage = () => {
             onClick={() => {
               const currentFrame = playerRef.current?.getCurrentFrame() ?? 0;
               const progress = currentFrame / durationInFrames;
-
               const itemDurationInFrames = Math.ceil(item.duration * VIDEO_FPS);
 
-              if (currentFrame > itemDurationInFrames) {
-                playerRef.current?.seekTo(itemDurationInFrames * progress);
-              }
+              playerRef.current?.seekTo(itemDurationInFrames * progress);
 
               setCurrentSong(key as keyof typeof songs);
             }}
