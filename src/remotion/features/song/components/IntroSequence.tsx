@@ -53,7 +53,7 @@ export default function IntroSequence() {
   const firstLyric = song.lyrics[0];
   const firstLyricStartFrame = firstLyric.startAt * fps;
 
-  const startAt = 190;
+  const startAt = 190 - (song.offset ? song.offset * fps : 0);
   const endAt = firstLyricStartFrame - 10;
 
   return (

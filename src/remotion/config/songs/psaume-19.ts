@@ -8,6 +8,7 @@ export default {
   title: "Psaume 19",
   file: "psaume-19.wav",
   duration: 164.9515625,
+  offset: 2,
   metadata: {
     writer: "C. Marot, M. F. Gonin",
     composer: "A. Sarran",
