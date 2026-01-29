@@ -34,6 +34,7 @@ const Home: NextPage = () => {
             }}
             controls
             moveToBeginningWhenEnded={false}
+            spaceKeyToPlayOrPause
           />
         </Context.Provider>
       </div>
@@ -50,9 +51,11 @@ const Home: NextPage = () => {
               const progress = currentFrame / durationInFrames;
               const itemDurationInFrames = Math.ceil(item.duration * VIDEO_FPS);
 
-              playerRef.current?.seekTo(itemDurationInFrames * progress);
-
               setCurrentSong(key as keyof typeof songs);
+
+              setTimeout(() => {
+                playerRef.current?.seekTo(itemDurationInFrames * progress);
+              }, 0);
             }}
           >
             {item.title}
