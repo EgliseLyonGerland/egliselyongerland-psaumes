@@ -9,9 +9,8 @@ export default function OutroSequence() {
 
   const lastLyric = song.lyrics[song.lyrics.length - 1];
   const lastLyricEndAt = lastLyric.endAt ?? song.duration - 10;
-  const delta = Math.min(song.duration - lastLyricEndAt, 15);
 
-  const startAt = (song.duration - delta + 1) * VIDEO_FPS;
+  const startAt = (lastLyricEndAt + 2) * VIDEO_FPS;
 
   const opacity = interpolate(frame, [startAt, startAt + 20], [0, 1], {
     extrapolateLeft: "clamp",
