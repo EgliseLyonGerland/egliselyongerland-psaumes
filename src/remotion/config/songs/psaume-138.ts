@@ -112,11 +112,11 @@ export default {
       startAt: getStartTime(tempo, 276, offset),
     },
     {
-      text: "Ce qu'il t'a plu de commencer",
+      text: "Ce qu'il t'a plu de commencer,",
       startAt: getStartTime(tempo, 288, offset),
     },
     {
-      text: "Sans se lasser ta main l'achève.",
+      text: "Sans se lasser, ta main l'achève.",
       startAt: getStartTime(tempo, 300, offset),
       endAt: getStartTime(tempo, 312, offset),
     },
